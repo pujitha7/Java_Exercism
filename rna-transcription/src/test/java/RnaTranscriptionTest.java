@@ -40,7 +40,7 @@ public class RnaTranscriptionTest {
 
     @Test
     public void testRnaTranscription() {
-        assertEquals("UGCACCAGAAUU", rnaTranscription.transcribe("ACGTGGTCTTAA"));
+        assertEquals("CCGA", rnaTranscription.transcribe("GgcT"));
     }
 
 }

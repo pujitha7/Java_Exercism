@@ -10,7 +10,7 @@ class RnaTranscription {
     String transcribe(String dnaStrand) {
         StringBuilder rnaStrand=new StringBuilder("");
         for(int i=0;i<dnaStrand.length();i++){
-            rnaStrand.append(map.get(dnaStrand.charAt(i)));
+            rnaStrand.append(map.get(Character.toUpperCase(dnaStrand.charAt(i))));
         }
         return rnaStrand.toString();
     }
