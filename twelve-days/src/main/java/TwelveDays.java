@@ -33,7 +33,16 @@ class TwelveDays {
 
 
     String verse(int verseNumber) {
-        return String.format("On the %s day of Christmas my true love gave to me: %s\n",ordinals.get(verseNumber),rightVerse(verseNumber));
+        StringBuilder sb=new StringBuilder("");
+        sb.append(String.format("On the %s day of Christmas my true love gave to me: ",ordinals.get(verseNumber)));
+        for(int i=verseNumber;i>1;i--){
+            sb.append(String.format("%s, ", map.get(i)));
+            if(i==2){
+                sb.append("and ");
+            }
+        }
+        sb.append(String.format("%s\n",map.get(1)));
+        return sb.toString();
     }
 
     String verses(int startVerse, int endVerse) {
@@ -47,17 +56,5 @@ class TwelveDays {
     
     String sing() {
         return verses(1,12);
-    }
-
-    String rightVerse(int verseNumber){
-        StringBuilder sb=new StringBuilder("");
-        for(int i=verseNumber;i>1;i--){
-            sb.append(String.format("%s, ", map.get(i)));
-            if(i==2){
-                sb.append("and ");
-            }
-        }
-        sb.append(map.get(1));
-        return sb.toString();
     }
 }
