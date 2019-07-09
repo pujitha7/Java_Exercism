@@ -30,17 +30,17 @@ public class RnaTranscriptionTest {
 
     @Test
     public void testRnaTranscriptionOfThymineIsAdenine() {
-        assertEquals("A", rnaTranscription.transcribe("T"));
+        assertEquals("CCGA", rnaTranscription.transcribe("GgC3"));
     }
 
     @Test
     public void testRnaTranscriptionOfAdenineIsUracil() {
-        assertEquals("U", rnaTranscription.transcribe("A"));
+        assertEquals("U", rnaTranscription.transcribe("a"));
     }
 
     @Test
     public void testRnaTranscription() {
-        assertEquals("CCGA", rnaTranscription.transcribe("GgcT"));
+        assertEquals("CCGA", rnaTranscription.transcribe("ggCt"));
     }
 
 }
