@@ -31,33 +31,33 @@ class TwelveDays {
         ordinals.put(12,"twelfth");
     }
 
+
     String verse(int verseNumber) {
-        StringBuilder sb=new StringBuilder("On the ").append(ordinals.get(verseNumber)).append(" day of Christmas my true love gave to me: ");
-        for(int i=verseNumber;i>1;i--){
-            sb.append(map.get(i)).append(", ");
-        }
-        if(verseNumber!=1){
-            sb.append("and ");
-        }
-        sb.append(map.get(1)).append("\n");
-        return sb.toString();
+        return String.format("On the %s day of Christmas my true love gave to me: %s\n",ordinals.get(verseNumber),rightVerse(verseNumber));
     }
 
     String verses(int startVerse, int endVerse) {
         StringBuilder sb=new StringBuilder("");
         for(int i=startVerse;i<endVerse;i++){ 
-            sb.append(verse(i)).append("\n");
+            sb.append(String.format("%s\n",verse(i)));
         }
         sb.append(verse(endVerse));
         return sb.toString();
     }
     
     String sing() {
-        StringBuilder sb=new StringBuilder();
-        for(int i=1;i<map.size();i++){
-            sb.append(verse(i)).append("\n");
+        return verses(1,12);
+    }
+
+    String rightVerse(int verseNumber){
+        StringBuilder sb=new StringBuilder("");
+        for(int i=verseNumber;i>1;i--){
+            sb.append(String.format("%s, ", map.get(i)));
+            if(i==2){
+                sb.append("and ");
+            }
         }
-        sb.append(verse(map.size()));
+        sb.append(map.get(1));
         return sb.toString();
     }
 }
