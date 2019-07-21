@@ -3,15 +3,15 @@ import static java.lang.Character.isLetterOrDigit;
 public class Preprocess{
 
     public String processSentence(String sentence){
-        StringBuilder sb=new StringBuilder("");
+        StringBuilder modified=new StringBuilder("");
         char currChar;
         for(int index=0;index<sentence.length();index++){
             currChar=sentence.charAt(index);
             if(isLetterOrDigit(currChar)){
-                sb.append(currChar);
+                modified.append(currChar);
             }
         }
-        return sb.toString().toLowerCase();
+        return modified.toString().toLowerCase();
     }
 
 }
