@@ -7,15 +7,16 @@ public class Palindrome {
 
     public boolean check(String sentence) {
         sentence=preprocess.processSentence(sentence);
-        int i=0;
-        int j=sentence.length()-1;
-        while(i<j){
-            if(sentence.charAt(i)!=sentence.charAt(j)){
+        
+        int backward=sentence.length()-1;
+        int midSize=(int)sentence.length()/2;
+
+        for(int index=0;index<midSize;index++){
+            if(sentence.charAt(index)!=sentence.charAt(backward-index)){
                 return false;
             }
-            i++;
-            j--;
         }
+
         return true;
     }
     

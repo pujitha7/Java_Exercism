@@ -5,8 +5,8 @@ public class Preprocess{
     public String processSentence(String sentence){
         StringBuilder sb=new StringBuilder("");
         char currChar;
-        for(int i=0;i<sentence.length();i++){
-            currChar=sentence.charAt(i);
+        for(int index=0;index<sentence.length();index++){
+            currChar=sentence.charAt(index);
             if(isLetterOrDigit(currChar)){
                 sb.append(currChar);
             }
